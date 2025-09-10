@@ -1,0 +1,116 @@
+.flowers {
+  display: flex;
+  align-items: end;
+  flex-direction: column;
+}
+
+.sortButtons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.flowersList {
+  display: flex;
+  align-items: row;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.flowersListItem {
+  width: 100%;
+  background-color: #c4c4c470;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.btn {
+  border-radius: 20px;
+  background: var(--color-accent);
+  padding: 10px;
+  font-size: 15px;
+}
+
+.photo {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 20px;
+  margin: 0 auto;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  fill: rgb(224, 42, 42);
+}
+
+.titleAndBtn {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-end;
+  margin-top: 20px;
+  gap: 0;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+}
+
+.favoriteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.2s;
+}
+
+.favoriteButton svg {
+  fill: none;
+  stroke: #ec46adf3;
+  transition: fill 0.2s, transform 0.2s;
+}
+.favoriteButton svg:hover {
+  transform: scale(1.2);
+}
+
+.favoriteButton:hover {
+  background: none;
+}
+
+.favoriteButton.active svg {
+  fill: var(--color-accent);
+  transform: scale(1.2);
+}
+
+@media screen and (min-width: 768px) {
+  .flowersListItem {
+    width: calc((100% - 30px) / 2);
+  }
+
+  .titleAndBtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (min-width: 1158px) {
+  .flowersListItem {
+    width: calc((100% - 60px) / 3);
+  }
+  .titleAndBtn {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+    flex-direction: row;
+    gap: 0;
+  }
+}

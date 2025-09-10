@@ -1,0 +1,14 @@
+.shopPage {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .shopPage {
+    margin-top: 72px;
+    align-items: start;
+    flex-direction: row;
+  }
+}

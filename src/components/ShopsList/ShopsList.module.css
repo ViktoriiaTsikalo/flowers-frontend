@@ -1,0 +1,38 @@
+.shopsListContainer {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  padding: 40px;
+  border: 1px solid #999;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.shopsList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.shopsListItem {
+  border-radius: 20px;
+  background: var(--color-accent);
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shopsListItem:hover {
+  background: #e789aa;
+}
+
+@media screen and (min-width: 768px) {
+  .shopsListContainer {
+    max-width: 200px;
+  }
+}

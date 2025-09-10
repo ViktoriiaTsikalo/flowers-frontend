@@ -1,0 +1,30 @@
+.order {
+  margin-top: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 500px;
+}
+
+.orderList {
+  margin-top: 20px;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.orderListItem {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30px;
+  gap: 30px;
+}
+
+.orderDetail {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+  font-weight: 500;
+}
