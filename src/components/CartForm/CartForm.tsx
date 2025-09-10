@@ -2,7 +2,6 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import s from "./CartForm.module.css";
 import CartItems from "../CartItems/CartItems";
-import { useState } from "react";
 
 export interface CustomerData {
   customerName: string;
@@ -16,8 +15,6 @@ interface CartFormProps {
 }
 
 const CartForm: React.FC<CartFormProps> = ({ onSubmit }) => {
-  const [totalPrice, setTotalPrice] = useState(0);
-
   const validationSchema = Yup.object().shape({
     customerName: Yup.string().min(2, "Too Short!").required("Required"),
     email: Yup.string().email("Invalid email").required("Required"),
@@ -31,7 +28,12 @@ const CartForm: React.FC<CartFormProps> = ({ onSubmit }) => {
 
   return (
     <Formik
-      initialValues={{ customerName: "", email: "", phone: "", address: "" }}
+      initialValues={{
+        customerName: "",
+        email: "",
+        phone: "",
+        address: "",
+      }}
       validationSchema={validationSchema}
       onSubmit={handleSubmit}
     >
@@ -80,7 +82,7 @@ const CartForm: React.FC<CartFormProps> = ({ onSubmit }) => {
               </label>
             </div>
 
-            <CartItems onTotalChange={setTotalPrice} />
+            <CartItems />
           </div>
 
           <button type="submit" className={s.submitBtn}>

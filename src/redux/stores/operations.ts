@@ -13,7 +13,6 @@ export const fetchStores = createAsyncThunk<
 >("stores/fetchStores", async (_, thunkAPI) => {
   try {
     const response = await API.get<IStore[]>("/stores");
-    console.log(response.data);
     return response.data;
   } catch (error: unknown) {
     if (error instanceof Error) {

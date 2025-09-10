@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import {
   increaseQuantity,
@@ -8,11 +7,7 @@ import {
 import { selectCart } from "../../redux/flowers/selectors";
 import s from "./CartItems.module.css";
 
-interface CartItemsProps {
-  onTotalChange?: (total: number) => void;
-}
-
-const CartItems: React.FC<CartItemsProps> = ({ onTotalChange }) => {
+const CartItems: React.FC = () => {
   const dispatch = useAppDispatch();
   const cart = useAppSelector(selectCart);
 
@@ -20,12 +15,6 @@ const CartItems: React.FC<CartItemsProps> = ({ onTotalChange }) => {
     (sum, item) => sum + item.price * item.quantity,
     0
   );
-
-  useEffect(() => {
-    if (onTotalChange) {
-      onTotalChange(totalPrice);
-    }
-  }, [totalPrice, onTotalChange]);
 
   if (cart.length === 0) return <p>Your cart is empty</p>;
 

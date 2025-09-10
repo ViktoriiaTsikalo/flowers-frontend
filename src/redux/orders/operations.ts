@@ -74,7 +74,6 @@ export const fetchOrderDetails = createAsyncThunk<
       message: string;
       data: IOrderDetails;
     }>(`/orders/${orderId}`);
-    console.log(response.data);
     return response.data.data;
   } catch (error: unknown) {
     if (error instanceof Error) return thunkAPI.rejectWithValue(error.message);
